@@ -3,3 +3,6 @@ plugins {
 }
 rootProject.name = "ASTparser"
 
+include("ast-parser")
+include("qdrant-import")
+

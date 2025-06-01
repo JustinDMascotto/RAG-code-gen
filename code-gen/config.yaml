@@ -1,0 +1,16 @@
+llm:
+  provider: anthropic
+  model: claude-3-7-sonnet-20250219
+  temperature: 0.2
+  api_key: "***"
+
+qdrant:
+  host: localhost
+  port: 6333
+  collection_name: kotlin-code
+
+retriever:
+  top_k: 10
+
+embedding:
+  model: BAAI/bge-small-en-v1.5

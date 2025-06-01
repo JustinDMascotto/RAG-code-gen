@@ -1,0 +1,9 @@
+langchain
+langchain-community
+langchain-core
+langchain-anthropic
+anthropic
+qdrant-client
+sentence-transformers
+transformers
+torch
