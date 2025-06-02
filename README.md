@@ -1,4 +1,4 @@
-# ASTparser
+# RAG-code-gen
 
 A complete RAG (Retrieval-Augmented Generation) pipeline for Kotlin code analysis, semantic search, and AI-powered code generation.
 
