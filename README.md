@@ -172,12 +172,12 @@ The embedding service will run on `http://localhost:8000` and provide semantic e
 
 ```bash
 # Parse files and output JSONL
-java -jar ast-parser/build/libs/ast-parser-1.0-SNAPSHOT.jar \
+java -jar ast-parser/build/libs/ast-parser.jar \
   --output=jsonl \
   /path/to/kotlin/project > code_chunks.jsonl
 
 # Or parse specific files
-java -jar ast-parser/build/libs/ast-parser-1.0-SNAPSHOT.jar \
+java -jar ast-parser/build/libs/ast-parser.jar \
   --output=jsonl \
   MyClass.kt AnotherFile.kts > code_chunks.jsonl
 ```
@@ -186,10 +186,11 @@ java -jar ast-parser/build/libs/ast-parser-1.0-SNAPSHOT.jar \
 
 ```bash
 # Import with automatic collection creation
-cat code_chunks.jsonl | java -jar qdrant-import/build/libs/qdrant-import-1.0-SNAPSHOT.jar \
+cat code_chunks.jsonl | java -jar qdrant-import/build/libs/qdrant-import.jar \
   --collection=kotlin-code \
   --qdrant-url=http://localhost:6333 \
-  --batch-size=50
+  --batch-size=50 \
+  --embedding-url=http://localhost:8000
 ```
 
 ### 5. Set Up Code Generation
@@ -239,7 +240,7 @@ Processing sub-question: What libraries are commonly used for validation?
 docker run -d --name qdrant -p 6333:6333 qdrant/qdrant
 
 # 2. Start embedding service (in another terminal)
-uvicorn embedding_service:app --host 0.0.0.0 --port 8000
+uvicorn embedding_server:app --host 0.0.0.0 --port 8000
 
 # 3. Build tools
 ./gradlew build
