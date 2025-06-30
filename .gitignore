@@ -43,3 +43,4 @@ bin/
 
 ### Python ###
 **/venv
+code-gen/config.yaml

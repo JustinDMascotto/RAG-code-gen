@@ -2,8 +2,12 @@ langchain
 langchain-community
 langchain-core
 langchain-anthropic
+langgraph
 anthropic
 qdrant-client
 sentence-transformers
 transformers
 torch
+pyyaml
+ipython
+notebook
